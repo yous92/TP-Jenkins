@@ -5,6 +5,8 @@ pipeline {
       steps{
       bat "gradle test" 
     //modification du fichier
+        
+        
       }
       
       
