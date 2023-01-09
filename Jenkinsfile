@@ -4,7 +4,8 @@ pipeline {
     stage("test"){
       steps{
       bat "gradle test" 
-    //modification du fichier
+    //modification du fichier  
+        
         
         
       }
