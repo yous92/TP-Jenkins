@@ -17,8 +17,8 @@ pipeline {
       
   
           steps {
-            withSonarQubeEnv('sonar') {
-              bat(script: 'D:\\gradle-5.6\\bin\\gradle sonarqube', returnStatus: true)
+             withSonarQubeEnv('TP8_OGL_JENKINS') {
+              bat 'sonar-scanner'
             }
 
           
