@@ -10,6 +10,7 @@ pipeline {
       }
       
       
+      
     }
     
     stage('Code Analysis') {
@@ -22,14 +23,22 @@ pipeline {
           }
         }
     
-//      stage('Build') {
-//      steps {
-//         bat(script: 'gradle build', label: 'gradle build')
-//         bat 'gradle javadoc'
-//        archiveArtifacts 'build/libs/*.jar, build/docs/javadoc/*'}
+//      stage('Code Quality') {
+//           steps {
+//             waitForQualityGate true
+          
+//           }
+//         }
+    
+     stage('Build') {
+     steps {
+        bat'gradle build'
+        bat 'gradle javadoc'
+       archiveArtifacts 'build/libs/*.jar, build/docs/javadoc/*'
+     }
        
         
-//      }
+     }
 }
 
 }
