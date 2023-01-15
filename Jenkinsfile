@@ -13,11 +13,8 @@ pipeline {
     }
     
     stage('Code Analysis') {
-      
-      
-  
           steps {
-             withSonarQubeEnv('TP8_OGL_JENKINS') {
+             withSonarQubeEnv('sonar') {
               bat 'sonar-scanner'
             }
 
