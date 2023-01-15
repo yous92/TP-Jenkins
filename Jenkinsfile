@@ -1,22 +1,38 @@
 pipeline {
   agent any
   stages {
-    stage("test"){
+    stage('Test'){
       steps{
       bat "gradle test" 
-    //modification du fichier  
-        
-        
-        
-        
-        
-        
-        
-        
+      archiveArtifacts 'build/test-results/test/*'
+      cucumber 'reports/*.json'
+   
       }
       
       
     }
+    
+//     stage('Code Analysis') {
+      
+      
+  
+//           steps {
+//             withSonarQubeEnv('sonar') {
+//               bat(script: 'D:\\gradle-5.6\\bin\\gradle sonarqube', returnStatus: true)
+//             }
+
+          
+//           }
+//         }
+    
+//      stage('Build') {
+//      steps {
+//         bat(script: 'gradle build', label: 'gradle build')
+//         bat 'gradle javadoc'
+//        archiveArtifacts 'build/libs/*.jar, build/docs/javadoc/*'}
+       
+        
+//      }
 }
 
 }
