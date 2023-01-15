@@ -9,10 +9,8 @@ pipeline {
    
       }
       
-      
-      
     }
-    
+    /////
     stage('Code Analysis') {
           steps {
              withSonarQubeEnv('sonar') {
@@ -22,7 +20,7 @@ pipeline {
           
           }
         }
-    
+    ///////
      stage('Code Quality') {
          post {
         
@@ -42,7 +40,12 @@ pipeline {
           
           }
         }
-    
+     stage('Publish') {
+      steps {
+        bat 'gradle publish'
+      }
+    }
+    /////
      stage('Build') {
      steps {
         bat'gradle build'
@@ -53,11 +56,7 @@ pipeline {
         
      }
     
-    stage('Publish') {
-      steps {
-        bat 'gradle publish'
-      }
-    }
+   
 }
 
 }
