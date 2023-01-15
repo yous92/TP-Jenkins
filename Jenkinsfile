@@ -23,12 +23,25 @@ pipeline {
           }
         }
     
-//      stage('Code Quality') {
-//           steps {
-//             waitForQualityGate true
+     stage('Code Quality') {
+         post {
+        
+        failure {
+            error "Pipeline aborted due to quality gate failed"
           
-//           }
-//         }
+        }
+        
+      }
+          steps {
+//             def qg = waitForQualityGate()
+//               if (qg.status != 'OK') {
+//                   error "Pipeline aborted due to quality gate failure: ${qg.status}"
+//               }
+//             waitForQualityGate true
+                waitForQualityGate
+          
+          }
+        }
     
      stage('Build') {
      steps {
@@ -39,6 +52,12 @@ pipeline {
        
         
      }
+    
+    stage('Publish') {
+      steps {
+        bat 'gradle publish'
+      }
+    }
 }
 
 }
