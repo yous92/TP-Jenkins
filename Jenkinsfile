@@ -12,18 +12,18 @@ pipeline {
       
     }
     
-//     stage('Code Analysis') {
+    stage('Code Analysis') {
       
       
   
-//           steps {
-//             withSonarQubeEnv('sonar') {
-//               bat(script: 'D:\\gradle-5.6\\bin\\gradle sonarqube', returnStatus: true)
-//             }
+          steps {
+            withSonarQubeEnv('sonar') {
+              bat(script: 'D:\\gradle-5.6\\bin\\gradle sonarqube', returnStatus: true)
+            }
 
           
-//           }
-//         }
+          }
+        }
     
 //      stage('Build') {
 //      steps {
