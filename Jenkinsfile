@@ -63,7 +63,6 @@ pipeline {
   stage('Slack and msg Notifications') {
       steps {
         notifyEvents message: 'New build is created successfuly', tokan:'hBiYjwp3l4bS3IkjbcDmTC8vSsL1lVUs'
-//         slackSend(baseUrl: 'https://hooks.slack.com/services/', token: '', message: 'New build is Created', channel: 'ogl')
       }
     }
     
