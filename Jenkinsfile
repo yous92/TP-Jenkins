@@ -50,12 +50,19 @@ pipeline {
     }
     
     
-    stage('Email') {
+    stage('Email notification') {
       steps {
             mail to: "ja_boucetta@esi.dz",
             subject: "Test Email",
             body: "Test"
-//          mail(subject: 'Build Success', body: 'New Build is deployed !', from: 'ja_boucetta@esi.dz', to: '.dz')
+
+      }
+    }
+    
+    
+  stage('Slack Notifications') {
+      steps {
+        slackSend(baseUrl: 'https://hooks.slack.com/services/', token: 'hBiYjwp3l4bS3IkjbcDmTC8vSsL1lVUs', message: 'New build is Created', channel: 'ogl')
       }
     }
     
