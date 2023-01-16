@@ -41,11 +41,11 @@ pipeline {
          
      }
        
-       //      stage('Publish') {
-//       steps {
-//         bat 'gradle publish'
-//       }
-//     }
+            stage('Publish') {
+      steps {
+        bat 'gradle publish'
+      }
+    }
  
 }
 
