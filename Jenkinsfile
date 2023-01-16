@@ -40,6 +40,7 @@ pipeline {
         bat 'gradle javadoc'
        archiveArtifacts 'build/libs/*.jar, build/docs/javadoc/*'
      }
+       
          
      }
        
