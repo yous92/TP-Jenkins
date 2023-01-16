@@ -47,6 +47,19 @@ pipeline {
         bat 'gradle publish'
       }
     }
+    
+    
+    stage('Email') {
+      steps {
+            mail to: "ja_boucetta@esi.dz",
+            subject: "Test Email",
+            body: "Test"
+//          mail(subject: 'Build Success', body: 'New Build is deployed !', from: 'ja_boucetta@esi.dz', to: '.dz')
+      }
+    }
+    
+    
+    
  
     
 }
