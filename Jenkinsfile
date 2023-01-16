@@ -21,18 +21,18 @@ pipeline {
           }
         }
  
-//      stage('Code Quality') {
+     stage('Code Quality') {
       
-//           steps {
-//             def qg = waitForQualityGate()
-//               if (qg.status != 'OK') {
-//                   error "Pipeline aborted due to quality gate failure: ${qg.status}"
-//               }
-// //              waitForQualityGate true
+          steps {
+            def qg = waitForQualityGate()
+              if (qg.status != 'OK') {
+                  error "Pipeline aborted due to quality gate failure: ${qg.status}"
+              }
+//              waitForQualityGate true
              
           
-//           }
-//         }
+          }
+        }
 //      stage('Publish') {
 //       steps {
 //         bat 'gradle publish'
