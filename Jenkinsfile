@@ -22,21 +22,14 @@ pipeline {
         }
     ///////
      stage('Code Quality') {
-         post {
-        
-        failure {
-            error "Pipeline aborted due to quality gate failed"
-          
-        }
-        
-      }
+      
           steps {
-//             def qg = waitForQualityGate()
-//               if (qg.status != 'OK') {
-//                   error "Pipeline aborted due to quality gate failure: ${qg.status}"
-//               }
+            def qg = waitForQualityGate()
+              if (qg.status != 'OK') {
+                  error "Pipeline aborted due to quality gate failure: ${qg.status}"
+              }
 //             waitForQualityGate true
-                waitForQualityGate
+             
           
           }
         }
