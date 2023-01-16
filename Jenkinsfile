@@ -61,11 +61,11 @@ pipeline {
     
     
     
-  stage('Slack and msg Notifications') {
-      steps {
-        notifyEvents message: 'New build is created successfuly', tokan:'hBiYjwp3l4bS3IkjbcDmTC8vSsL1lVUs'
-      }
-    }
+//   stage('Slack and msg Notifications') {
+//       steps {
+//         notifyEvents message: 'New build is created successfuly', tokan:'hBiYjwp3l4bS3IkjbcDmTC8vSsL1lVUs'
+//       }
+//     }
     
 
 }
