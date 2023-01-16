@@ -11,15 +11,15 @@ pipeline {
       
     }
 
-//     stage('Code Analysis') {
-//           steps {
-//              withSonarQubeEnv('sonar') {
-//               bat 'gradle sonarqube '
-//             }
+    stage('Code Analysis') {
+          steps {
+             withSonarQubeEnv('sonar') {
+              bat 'gradle sonarqube '
+            }
 
           
-//           }
-//         }
+          }
+        }
  
 //      stage('Code Quality') {
       
