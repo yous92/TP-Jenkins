@@ -66,7 +66,11 @@ pipeline {
         notifyEvents message: 'New build is created successfuly', token:'hBiYjwp3l4bS3IkjbcDmTC8vSsL1lVUs'
       }
     }
-    post{
+   
+
+}
+  
+   post{
       success{  mail to: "ja_boucetta@esi.dz",
             subject: "Build success",
             body: "New build is deployed"}
@@ -76,8 +80,6 @@ pipeline {
             body: "New build is not deployed"
       }
     }
-
-}
 
 }
  
