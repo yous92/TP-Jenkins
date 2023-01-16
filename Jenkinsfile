@@ -32,14 +32,14 @@ pipeline {
     
 
    
-//      stage('Build') {
-//      steps {
-//         bat'gradle build'
-//         bat 'gradle javadoc'
-//        archiveArtifacts 'build/libs/*.jar, build/docs/javadoc/*'
-//      }
+     stage('Build') {
+     steps {
+        bat'gradle build'
+        bat 'gradle javadoc'
+       archiveArtifacts 'build/libs/*.jar, build/docs/javadoc/*'
+     }
          
-//      }
+     }
        
        //      stage('Publish') {
 //       steps {
