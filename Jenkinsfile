@@ -28,11 +28,7 @@ pipeline {
              waitForQualityGate true
              
         }
-//      stage('Publish') {
-//       steps {
-//         bat 'gradle publish'
-//       }
-//     }
+
    
 //      stage('Build') {
 //      steps {
@@ -40,11 +36,14 @@ pipeline {
 //         bat 'gradle javadoc'
 //        archiveArtifacts 'build/libs/*.jar, build/docs/javadoc/*'
 //      }
-       
-       
-       
-        
+         
 //      }
+       
+       //      stage('Publish') {
+//       steps {
+//         bat 'gradle publish'
+//       }
+//     }
  
 }
 
